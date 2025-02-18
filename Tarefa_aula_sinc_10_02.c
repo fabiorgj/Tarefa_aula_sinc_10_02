@@ -141,15 +141,12 @@ int main(){
         adc_select_input(1); //Seleciona a entrada ADC do X, para fazer a medição
         leitura_joyX = adc_read();
         printf("X: %d\n", leitura_joyX);
-        level_pwm = abs(leitura_joyX-2048)*2;
-
-        
+        level_pwm = abs(leitura_joyX-2048)*2;        
 
         adc_select_input(0); //Seleciona a entrada ADC do Y, para fazer a medição
         leitura_joyY = adc_read();
         printf("Y: %d\n", leitura_joyY);
-        level_pwm_2 = abs(leitura_joyY-2048)*2;
-        
+        level_pwm_2 = abs(leitura_joyY-2048)*2;        
 
         //Chama a função para setar o brilho dos LEDs de acordo com a leitura do joystick
         set_pwm(LED_R, level_pwm);
